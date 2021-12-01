@@ -2,9 +2,11 @@
   "name": "first-program-nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon  --inspect ./index.js",
+    "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write \"src/**/*.{js,json,scss}\"",
+    "start": "nodemon  --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,9 +24,15 @@
   },
   "homepage": "https://github.com/dauquoctoan/nodejs_blog#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.0"
   }
 }
